@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fai Alharthi</title>
+  <meta name="description" content="iOS & Web Developer | UI/UX Designer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui"],
+            mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular"]
+          },
+          colors: {
+            brand: { DEFAULT: "#0ea5e9", dark: "#0284c7" }
+          },
+          boxShadow: { soft: "0 10px 30px -10px rgba(0,0,0,0.15)" }
+        }
+      }
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <style> html { scroll-behavior: smooth; } </style>
+</head>
+<body class="bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-slate-950/70 border-b border-slate-200/60 dark:border-slate-800/60">
+    <nav class="max-w-6xl mx-auto px-4 flex items-center justify-between py-3">
+      <a href="#home" class="flex items-center gap-3 group">
+        <span class="inline-grid place-items-center w-9 h-9 rounded-lg bg-gradient-to-br from-brand/20 to-brand/40 text-brand border border-brand/30 shadow-soft">
+          <span class="font-mono font-bold text-sm">{FA}</span>
+        </span>
+        <span class="font-extrabold text-lg tracking-tight">Fai Alharthi</span>
+      </a>
+      <button id="navToggle" class="md:hidden p-2 rounded-lg border border-slate-200 dark:border-slate-800" aria-label="Open menu">☰</button>
+      <div id="navLinks" class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#projects" class="hover:text-brand">Projects</a>
+        <a href="#skills" class="hover:text-brand">Skills</a>
+        <a href="#experience" class="hover:text-brand">Experience</a>
+        <a href="#contact" class="hover:text-brand">Contact</a>
+        <button id="themeToggle" class="rounded-xl border border-slate-200 dark:border-slate-800 px-3 py-2" title="Toggle theme" aria-label="Toggle dark mode">
+          <span id="themeIcon">☀</span>
+        </button>
+      </div>
+    </nav>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-950/90 backdrop-blur">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
+        <a href="#projects" class="hover:text-brand">Projects</a>
+        <a href="#skills" class="hover:text-brand">Skills</a>
+        <a href="#experience" class="hover:text-brand">Experience</a>
+        <a href="#contact" class="hover:text-brand">Contact</a>
+        <button id="themeToggleM" class="rounded-xl border border-slate-200 dark:border-slate-800 px-3 py-2 self-start" title="Toggle theme" aria-label="Toggle dark mode">
+          <span id="themeIconM">☀</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section id="home" class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center py-16 md:py-24">
+    <div>
+      <p class="text-brand font-bold">Hello! I'm</p>
+      <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mt-2">Fai Alharthi — iOS & Web Developer & UI/UX Designer.</h1>
+      <p class="mt-4 text-lg text-slate-600 dark:text-slate-300">
+        I craft clean, accessible interfaces and create seamless user experiences for mobile and web. Graduated from the Apple Developer Academy with a passion for intuitive design, creative prototyping, and crafting visually refined interfaces.</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="#projects" class="bg-brand hover:bg-brand-dark text-white rounded-2xl px-5 py-3 shadow-soft">See Projects</a>
+        <a href="assets/Fai-AlharthiCV.pdf" target="_blank" rel="noopener" class="rounded-2xl border border-slate-200 dark:border-slate-800 px-5 py-3 hover:bg-slate-50 dark:hover:bg-slate-900">Download Résumé</a>
+      </div>
+      <ul class="mt-6 flex flex-wrap gap-3 text-sm text-slate-500 dark:text-slate-400">
+        <li class="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-800">UI/UX</li>
+        <li class="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-800">SwiftUI</li>
+        <li class="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-800">Prototyping</li>
+        <li class="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-800">Design Systems</li>
+        <li class="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-800">iOS</li>
+        <li class="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-800">Web</li>
+      </ul>
+    </div>
+    <div class="relative">
+      <div class="aspect-square rounded-3xl bg-gradient-to-br from-brand/20 to-slate-100 dark:from-brand/10 dark:to-slate-900 border border-slate-200 dark:border-slate-800 p-4 grid place-items-center">
+        <img src="assets/hero_light.png" alt="Designer & Coder (light)" class="w-full h-full object-contain rounded-2xl border border-slate-200 dark:hidden" />
+        <img src="assets/hero_dark.png" alt="Designer & Coder (dark)" class="w-full h-full object-contain rounded-2xl border border-slate-800 hidden dark:block" />
+      </div>
+      <div class="absolute -bottom-4 -left-4 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl px-3 py-2 shadow-soft text-sm">
+        <span style="text-decoration: underline;">Open to CO‑OP or practical training on real-world projects</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="max-w-6xl mx-auto px-4 py-12 md:py-20">
+    <div class="flex items-end justify-between">
+      <h2 class="text-2xl md:text-3xl font-extrabold">Selected Projects</h2>
+      <a href="https://github.com/FaiAlharthi?tab=repositories" class="text-brand hover:text-brand-dark text-sm" target="_blank" rel="noopener">All repos →</a>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-950 hover:-translate-y-1 transition-transform shadow-soft">
+        <img src="assets/aquaday.png" alt="AquaDay app screens" class="w-full aspect-video object-cover" />
+        <div class="p-5">
+          <h3 class="font-bold text-lg">AquaDay — Water Intake Tracker</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">iOS app to set daily water goals from body weight, track progress with a ring UI, and schedule smart reminders.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-900">SwiftUI</span>
+            <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-900">MVVM</span>
+            <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-900">Notifications</span>
+          </div>
+          <div class="mt-4 flex items-center gap-3 text-sm">
+            <a href="https://github.com/FaiAlharthi/AquaDay" target="_blank" class="text-brand">Repository</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-950 hover:-translate-y-1 transition-transform shadow-soft">
+        <img src="assets/roqaa_icon.jpg" alt="Roqaa app icon" class="w-full aspect-video object-cover" />
+        <div class="p-5">
+          <h3 class="font-bold text-lg">Roqaa — Vision Training Game</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">Arabic game for children with amblyopia. Players patch the healthy eye and follow a moving star, then tap the final location to train focus and tracking.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-900">SwiftUI</span>
+            <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-900">SpriteKit</span>
+            <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-900">iOS</span>
+          </div>
+          <div class="mt-4 flex items-center gap-3 text-sm">
+            <a href="https://github.com/FaiAlharthi/Roqaa" target="_blank" class="text-brand">Repository</a>
+          </div>
+          <video controls class='mt-4 w-full rounded-xl border border-slate-200 dark:border-slate-800'><source src='assets/roqaa_demo.mov' type='video/quicktime'>Your browser may not support .mov playback.</video>
+        </div>
+      </article>
+
+      <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-950 hover:-translate-y-1 transition-transform shadow-soft">
+        <div class="w-full aspect-video bg-slate-100 dark:bg-slate-900 grid grid-cols-2 gap-1 p-1">
+          <img src="assets/aktashaf_1.png" alt="Aktashaf screen 1" class="w-full h-full object-cover rounded" />
+          <img src="assets/aktashaf_2.png" alt="Aktashaf screen 2" class="w-full h-full object-cover rounded" />
+        </div>
+        <div class="p-5">
+          <h3 class="font-bold text-lg">Aktashaf — Culture Explorer</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">iOS app that introduces travelers to local customs and etiquette by country, with Arabic content and bookmark/favorites views.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-900">SwiftUI</span>
+            <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-900">Local Data</span>
+          </div>
+          <div class="mt-4 flex items-center gap-3 text-sm">
+            <a href="https://github.com/FaiAlharthi/Aktashaf" target="_blank" class="text-brand">Repository</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-950 hover:-translate-y-1 transition-transform shadow-soft">
+        <div class="w-full aspect-video grid place-items-center bg-slate-50 dark:bg-slate-900 text-slate-400">No preview</div>
+        <div class="p-5">
+          <h3 class="font-bold text-lg">Movies — Simple Movie Browser</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">A lightweight iOS app to browse movies and view details. Built to practice networking, list layouts, and clean navigation.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-900">SwiftUI</span>
+            <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-900">Networking</span>
+          </div>
+          <div class="mt-4 flex items-center gap-3 text-sm">
+            <a href="https://github.com/FaiAlharthi/Movies" target="_blank" class="text-brand">Repository</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-950 hover:-translate-y-1 transition-transform shadow-soft">
+        <img src="assets/ayen.png" alt="Ayen teaser" class="w-full aspect-video object-cover" />
+        <div class="p-5">
+          <h3 class="font-bold text-lg">Ayen (عيّن) <span class="ms-2 text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 align-middle">Soon</span></h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">Keep your Ayen sharp, because only the fastest eye wins!</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-900">iOS</span>
+            <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-900">Game</span>
+          </div>
+        </div>
+      </article>
+</div>
+  </section>
+
+  
+
+
+
+  <section id="experience" class="max-w-6xl mx-auto px-4 py-12 md:py-20">
+    <h2 class="text-2xl md:text-3xl font-extrabold">Experience</h2>
+    <ol class="mt-6">
+      <li class="py-4">
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 bg-white dark:bg-slate-950">
+          <h3 class="font-bold">Apple Developer Academy — Trainee</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300">9‑month intensive program on iOS, human‑centered design, teamwork, and shipping prototypes.</p>
+          <p class="text-xs text-slate-500 mt-1">2024 — 2025</p>
+        </div>
+      </li>
+      <li class="py-4">
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 bg-white dark:bg-slate-950">
+          <h3 class="font-bold">Graduation Project — Credit Card Fraud</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Focused on experimentation and clear visual reporting & dashboards.</p>
+          <p class="text-xs text-slate-500 mt-1">2025</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="contact" class="max-w-6xl mx-auto px-4 py-12 md:py-20">
+    <div class="rounded-3xl border border-slate-200 dark:border-slate-800 p-6 md:p-8 bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
+      <h2 class="text-2xl md:text-3xl font-extrabold">Let's Connect</h2>
+      <p class="mt-2 text-slate-600 dark:text-slate-300">Open to iOS or web collaborations. Happy to hear about your ideas.</p>
+      <div class="mt-6 grid md:grid-cols-2 gap-4">
+        <form onsubmit="event.preventDefault(); window.location='mailto:faialharthi@gmail.com?subject=Hello%20Fai';" class="space-y-3">
+          <input required placeholder="Your name" class="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-transparent px-4 py-2.5" />
+          <input required type="email" placeholder="Email" class="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-transparent px-4 py-2.5" />
+          <textarea required placeholder="Message" rows="4" class="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-transparent px-4 py-2.5"></textarea>
+          <button class="bg-brand hover:bg-brand-dark text-white rounded-xl px-5 py-2.5">Send</button>
+        </form>
+        <div class="text-sm text-slate-600 dark:text-slate-300">
+<p><i class="fas fa-envelope"></i> Email: <a class="text-brand" href="mailto:faialharthi@gmail.com">faialharthi@gmail.com</a></p>
+<p class="mt-1"><i class="fab fa-linkedin"></i> LinkedIn: <a class="text-brand" target="_blank" rel="noopener" href="https://www.linkedin.com/in/fai-alharthi-82818219b/">FaiAlharthi</a></p>
+<p class="mt-1"><i class="fab fa-github"></i> GitHub: <a class="text-brand" target="_blank" rel="noopener" href="https://github.com/FaiAlharthi">FaiAlharthi</a></p>
+<p class="mt-1"><i class="fab fa-behance"></i> Behance: <a class="text-brand" target="_blank" rel="noopener" href="https://www.behance.net/faial4">faial4</a></p>
+<p class="mt-1"><i class="fas fa-phone"></i> Phone: <a class="text-brand" href="tel:+966559446070">+966 55 944 6070</a></p>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="max-w-6xl mx-auto px-4 py-10 text-center text-sm text-slate-500">
+    <p>© <span id="year"></span> Fai Alharthi. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Default dark mode is enabled via class on <html>. Respect saved choice.
+    const root = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') root.classList.remove('dark');
+
+    function setIcons() {
+      const isDark = root.classList.contains('dark');
+      const icon = isDark ? '☀' : '🌙';
+      const el1 = document.getElementById('themeIcon');
+      const el2 = document.getElementById('themeIconM');
+      if (el1) el1.textContent = icon;
+      if (el2) el2.textContent = icon;
+    }
+    setIcons();
+
+    function toggleTheme() {
+      root.classList.toggle('dark');
+      localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+      setIcons();
+    }
+    document.getElementById('themeToggle')?.addEventListener('click', toggleTheme);
+    document.getElementById('themeToggleM')?.addEventListener('click', toggleTheme);
+
+    // Mobile nav
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    navToggle?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+  </script>
+</body>
+</html>
